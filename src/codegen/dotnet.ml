@@ -465,7 +465,7 @@ let convert_ilmethod ctx p is_interface m is_explicit_impl =
 				| _ ->
 					convert_signature ctx p (change_sig s.snorm)
 			in
-			(name,null_pos),false,[],Some (t,null_pos),None) m.margs
+			(name,null_pos),List.mem POpt flag.pf_io,[],Some (t,null_pos),None) m.margs
 		in
 		let ret = convert_signature ctx p (change_sig ret) in
 		let types = List.map (fun t ->
